@@ -1,0 +1,10 @@
+<div class="team-info-modal unselectable" unselectable="on">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div class="modal-body" ng-if="!loading">
+        <ng-include src="'scripts/modules/player-info/views/playerInfo.html'"></ng-include>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+#menuMainCont {
+  height: 100%;
+  display: inline-block;
+  width: $mainMenuWidth;
+  float: left;
+  #menu {
+    width: $mainMenuWidth;
+    height: 100%;
+    display: table;
+    position: absolute;
+    #appMenu {
+      display: table-cell;
+      vertical-align: middle;
+      .menuItem {
+        md-icon {
+          height: 40px;
+          width: 40px;
+          padding-left: 5px;
+          margin-bottom: 16px;
+          svg {
+            fill: $appMainColor
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<div class="landing-page-cont">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div ng-if="!loading">
+        <div class="module-title dynamic-element">
+            Standings
+        </div>
+        <md-tabs class="md-primary" md-selected="selectedLeagueIndex">
+            <md-tab ng-repeat="league in leagues" ng-click="updatesLeagueScrollBar(league.id)">
+                <md-tab-label class="dynamic-element">
+                    {{:: getLeagueIdDetails(league.id).name}}
+                </md-tab-label>
+                <md-tab-body>
+                    <div id="leagueTab{{league.id}}" class="h-100">
+
+
+                    <div ng-repeat="season in league.seasons.data">
+                        <div ng-if="season.seasonTable.length" ng-click="getTopPlayer($event, season)" class="top-scorer-btn dynamic-element">
+                            <md-icon class="d-i-b" md-svg-icon="./images/user.svg"></md-icon> <h3 class="d-i-b text-underline title">Best scorers</h3>
+                        </div>
+                        <div class="box-container dynamic-element" ng-repeat="phase in season.seasonTable">
+                            <div class="box-body">
+                                <div class="header">
+                                    <div class="block-text">
+                                        <div class="deco"></div>
+                                    </div>
+                                    <div class="block-text title">{{:: phase.name}}</div>
+                                    <div class="block-text subtitle">{{:: season.name}}</div>
+                                </div>
+                                <div class="body">
+                                    <div class="position-table">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th ng-click="sortBy('-position', phase)">Position</th>
+                                                <th ng-click="sortBy('-team_name', phase)">Team name</th>
+                                                <th ng-click="sortBy('-overall.games_played', phase)">Played</th>
+                                                <th ng-click="sortBy('-overall.won', phase)">Won</th>
+                                                <th ng-click="sortBy('-overall.draw', phase)">Draw</th>
+                                                <th ng-click="sortBy('-overall.lost', phase)">Lost</th>
+                                                <th ng-click="sortBy('-team_name', phase)">Goal</th>
+                                                <th ng-click="sortBy('-team_name', phase)">Difference</th>
+                                                <th ng-click="sortBy('-points', phase)">Points</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="team in phase.standings.data">
+                                                <td>{{ team.position}}</td>
+                                                <td class="text-underline" ng-click="openTeamDetails($event, team.team_id, phase)">{{:: team.team_name}}</td>
+                                                <td>{{ team.overall.games_played}}</td>
+                                                <td>{{ team.overall.won}}</td>
+                                                <td>{{ team.overall.draw}}</td>
+                                                <td>{{ team.overall.lost}}</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>{{ team.points}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+    </div>
+
+</div>

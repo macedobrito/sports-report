@@ -1,0 +1,26 @@
+<div class="landing-page-cont">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div ng-if="!loading">
+        <div class="module-title dynamic-element">
+            Live scores
+        </div>
+        <md-tabs class="md-primary">
+            <md-tab>
+                <md-tab-label class="dynamic-element">
+                    Games
+                </md-tab-label>
+                <md-tab-body>
+                    <div class="scroller-cont">
+                        <div class="live-score-card-cont">
+                            <live-score-card ng-repeat="card in liveScores" card="card"></live-score-card>
+                        </div>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+md-dialog {
+  overflow: hidden;
+  .module-title {
+    display: none;
+  }
+  border-radius: 0;
+  .team-info-modal {
+    .modal-dynamic-element{
+      opacity: 0;
+    }
+    height: 486px;
+    width: 600px;
+    background-color: $appBackground;
+    .progress-loading-main {
+      min-width: 600px;
+      overflow: hidden;
+    }
+    .head {
+      height: 100px;
+      background: $appBackground3;
+      box-shadow: $tableHeadShadow;
+      color: $appMainColor;
+      img {
+        float: left;
+        height: 70px;
+        margin-top: 12px;
+        margin-left: 12px;
+      }
+      .headText {
+        display: inline-block;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 18px;
+        margin-left: 23px;
+      }
+      .subtitle {
+        display: table-cell;
+        font-weight: 300;
+        /* margin-top: 18px; */
+        padding-left: 23px;
+      }
+    }
+    .body {
+      height: calc(100% - 98px);
+      td, th {
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+  .best-scorer-table {
+    td, th {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}

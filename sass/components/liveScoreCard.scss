@@ -1,0 +1,109 @@
+.live-score-card {
+  height: 200px;
+  width: 450px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.24), 0 0 2px 0 rgba(0,0,0,.12);
+  border-style: solid;
+  border-width: .1px;
+  background: linear-gradient(rgba(255, 255, 255, 0), transparent 80%, rgba(95, 95, 95, 0.02) 95%, rgba(255, 255, 255, 0.04));
+  border-color: #383838;
+  margin: 30px;
+  display: inline-block;
+  .header-info{
+    height: 29px;
+    display: table;
+    width: 100%;
+    .header-info-text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .compare-teams {
+      color: $appMainColor;
+      display: table-cell;
+      text-align: right;
+      vertical-align: middle;
+    }
+    .compare-teams:hover {
+      text-decoration: underline;
+    }
+  }
+  .main-info{
+    display: block;
+    height: 160px;
+    .team-cont{
+    width: 50%;
+    .team-logo{
+      height: 100%;
+      .image-cont {
+        width: 114px;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+          height: 114px;
+          margin-top: 10px;
+        }
+      }
+      .team-name{
+        color: $font;
+        text-align: center;
+      }
+    }
+    .team-score {
+      font-size: 70px;
+      font-weight: bolder;
+      text-align: center;
+      height: 154px;
+      overflow: hidden;
+      margin-top: 15px;
+      .goals {
+        color: #545454;
+        font-size: 11px;
+        text-align: left;
+        width: 160%;
+        margin-left: -15px;
+      }
+    }
+  }
+  }
+
+  .home {
+    float: left;
+  }
+  .away {
+    float: right;
+  }
+
+  .separator {
+    z-index: -10;
+    position: absolute;
+    font-size: 90px;
+    width: 100%;
+    text-align: center;
+    margin-left: -16px;
+    height: 159px;
+    padding-top: 9px;
+  }
+}
+.card-active {
+  .team-score {
+    color: $fontBold;
+  }
+  .header-info-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(12, 255, 0, 0.25);
+  }
+  border-color: rgba(0, 255, 40, 0.08);
+}
+
+.card-paused {
+  .team-score {
+    color: $fontBold;
+  }
+  .header-info-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(255, 122, 0, 0.47);
+  }
+  border-color: rgba(255, 122, 0, 0.08);
+}

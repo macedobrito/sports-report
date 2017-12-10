@@ -1,0 +1,11 @@
+<div id="mainContainer">
+    <div ng-click="" onclick="closeApp()" ng-if="isDesktopMode">
+        <md-icon md-svg-icon="images/close.svg" class="close-btn"></md-icon>
+    </div>
+    <div id="menuMainCont">
+    <ng-include src="'scripts/modules/core/menu/views/menu.html'"></ng-include>
+    </div>
+    <div class="d-i-b" id="homeContainer">
+    <ui-view></ui-view>
+    </div>
+</div>

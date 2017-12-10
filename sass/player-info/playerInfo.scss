@@ -1,0 +1,40 @@
+.player-info-cont {
+  md-tabs {
+    height: 100%;
+    md-tabs-content-wrapper{
+      height: 100%;
+      margin-top: 26px !important;
+      md-tab-content {
+        overflow: hidden;
+        height: calc(100% - 125px);
+      }
+    }
+  }
+  .head {
+    .head-text {
+      margin-top: 29px;
+
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin: 0;
+      }
+
+      h3 {
+        margin: 0;
+      }
+      .title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 18px;
+        color: $middleImportantText;
+      }
+      .subtitle {
+        margin: 0;
+        font-weight: 500;
+        color: $middleImportantTitle;
+      }
+    }
+  }
+}

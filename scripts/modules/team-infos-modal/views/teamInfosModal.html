@@ -1,0 +1,40 @@
+<!--<div ng-controller="teamInfosModalController as teamInfosModalCtrl">-->
+<div class="team-info-modal unselectable" unselectable="on">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div class="modal-body" ng-if="!loading">
+        <div class="head">
+            <img ng-src="{{:: team.logo_path}}" class="modal-dynamic-element" src="">
+            <div class="headText modal-dynamic-element">
+                {{:: team.name}}
+            </div>
+            <div class="subtitle modal-dynamic-element">
+                {{:: phase.name}}
+            </div>
+
+        </div>
+        <div class="body" id="teamInfoScrollBar">
+            <div class="position-table">
+                <table>
+                    <thead>
+                    <tr class="modal-dynamic-element">
+                        <th ng-click="sortBy()">#</th>
+                        <th ng-click="sortBy()">Player name</th>
+                        <th ng-click="sortBy()">Goals</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="player in team.squad.data | orderBy:'-goals'" class="modal-dynamic-element">
+                        <td>{{:: player.number}} </td>
+                        <td class="text-underline" ng-click="goToPlayerDetail(player.player_id)" >{{:: player.completeInfo.fullname}}</td>
+                        <td>{{:: player.goals}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

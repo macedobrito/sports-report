@@ -1,0 +1,33 @@
+<!--<div ng-controller="teamInfosModalController as teamInfosModalCtrl">-->
+<div class="team-info-modal best-scorer-table unselectable" unselectable="on">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div class="modal-body" ng-if="!loading">
+        <div class="head">
+            <div class="headText modal-dynamic-element">
+                Best Scorers
+            </div>
+        </div>
+        <div class="body" id="teamInfoScrollBar">
+            <div class="position-table">
+                <table>
+                    <thead>
+                    <tr class="modal-dynamic-element">
+                        <th ng-click="sortBy()">Player name</th>
+                        <th ng-click="sortBy()">Goals</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="player in players | orderBy:'-goals'" class="modal-dynamic-element">
+                        <td class="text-underline" ng-click="goToPlayerDetail(player.player_id)" >{{:: player.completeInfo.fullname}}</td>
+                        <td>{{:: player.goals}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

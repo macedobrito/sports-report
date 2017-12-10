@@ -1,0 +1,48 @@
+<div class="live-score-card col-md-4 dynamic-element unselectable" unselectable="on" ng-class="cardStatus">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div ng-if="!loading">
+        <div class="header-info">
+            <div class="header-info-text" ng-if="cardStatus == undefined">{{:: card.time.starting_at.date_time | date}}</div>
+            <div class="header-info-text" ng-if="cardStatus ==='card-active'">LIVE</div>
+            <div class="header-info-text" ng-if="cardStatus ==='card-paused'">HALF-TIME</div>
+            <div ng-if="cardStatus !=='card-active'" ng-click="compareTeams()" class="compare-teams">Compare teams</div>
+        </div>
+        <div class="main-info">
+            <div class="team-cont home">
+                <div class="team-logo  col-md-8 home">
+                    <div class="image-cont" ng-click="openTeamModal($event, card.localteam_id)">
+                        <img ng-src="{{:: localTeamDetail.logo_path}}" src="">
+                    </div>
+                    <div class="team-name">{{:: localTeamDetail.name}}</div>
+                </div>
+                <div class="team-score col-md-4" id="team-score-{{card.localteam_id}}">
+                    {{:: card.scores.localteam_score}}
+                    <div class="goals text-underline" ng-repeat="goal in card.goals.data">
+                        <div ng-if="goal.team_id == localTeamDetail.id" ng-click="openPlayerModal($event, goal.player_id)"><b>'{{:: goal.minute}}</b>:  {{goal.player_name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-cont away">
+                <div class="team-logo col-md-8 away" ng-click="openTeamModal($event, card.visitorteam_id)">
+                    <div class="image-cont">
+                        <img ng-src="{{:: visitorTeamDetail.logo_path}}" src="">
+                    </div>
+                    <div class="team-name">{{:: visitorTeamDetail.name}}</div>
+                </div>
+                <div class="team-score col-md-4" id="team-score-{{card.visitorteam_id}}">
+                    {{:: card.scores.visitorteam_score}}
+                    <div class="goals text-underline" ng-repeat="goal in card.goals.data" >
+                        <div ng-if="goal.team_id == visitorTeamDetail.id" ng-click="openPlayerModal($event, goal.player_id)">'{{:: goal.minute}}:  {{goal.player_name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator">
+                 -
+            </div>
+        </div>
+    </div>
+</div>

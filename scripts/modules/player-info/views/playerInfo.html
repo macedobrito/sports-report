@@ -1,0 +1,103 @@
+<div class="player-info-cont unselectable" unselectable="on">
+    <div class="progress-loading-main" ng-if="loading">
+        <div class="progress-loading-cont" style="">
+            <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+        </div>
+    </div>
+    <div ng-if="!loading">
+        <div class="module-title dynamic-element">
+            Player Infos
+        </div>
+        <md-tabs class="md-primary" md-selected="selectedTab">
+            <md-tab>
+                <md-tab-label class="dynamic-element">
+                    BIO
+                </md-tab-label>
+                <md-tab-body>
+                    <div class="mainBodyScroll">
+                        <div class="head">
+                            <img class="col-md-2 dynamic-element" ng-src="{{:: player.image_path}}" src="">
+                            <div class="head-text col-md-10 dynamic-element">
+                                <h1 class="dynamic-element">{{:: player.fullname}}</h1>
+                                <div>
+                                    <div class="dynamic-element">
+                                        <h2 class="d-i-b">Nationality: </h2>
+                                        <h3 class="d-i-b">{{::player.nationality}}</h3>
+                                    </div>
+                                    <div class="dynamic-element">
+                                        <div class="d-i-b title">Birth-date:</div>
+                                        <div class="d-i-b subtitle"> {{::player.birthdate}} - {{::player.birthplace}}</div>
+                                    </div>
+                                    <div class="dynamic-element">
+                                        <div class="d-i-b title">Height:</div>
+                                        <div class="d-i-b subtitle"> {{::player.height}}</div>
+                                    </div>
+                                    <div class="dynamic-element">
+                                        <div class="d-i-b title">Weight:</div>
+                                        <div class="d-i-b subtitle"> {{::player.weight}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body">
+                        </div>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label class="dynamic-element">
+                    TEAM
+                </md-tab-label>
+                <md-tab-body>
+                    <div class="mainBodyScroll">
+                        <div class="head">
+                            <img class="col-md-2 dynamic-element" ng-src="{{:: player.team.data.logo_path}}" src="">
+                            <div class="head-text col-md-10 dynamic-element">
+                                <h1 class="dynamic-element">{{:: player.team.data.name}}</h1>
+                            </div>
+                        </div>
+                        <div class="body">
+                        </div>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+            <md-tab ng-click="getLeaguesDetails()">
+                <md-tab-label class="dynamic-element">
+                    STATS
+                </md-tab-label>
+                <md-tab-body>
+                    <div class="mainBodyScroll position-table best-scorer-table">
+                        <table ng-if="selectedTab == 2">
+                            <thead>
+                            <tr>
+                                <th scope="col" ng-click="sortBy()">Season</th>
+                                <th scope="col" ng-click="sortBy()">League</th>
+                                <th scope="col" ng-click="sortBy()">Appearences</th>
+                                <th scope="col" ng-click="sortBy()">Goals</th>
+                                <th scope="col" ng-click="sortBy()">Lineups</th>
+                                <th scope="col" ng-click="sortBy()">Minutes</th>
+                                <th scope="col" ng-click="sortBy()">Red cards</th>
+                                <th scope="col" ng-click="sortBy()">Type</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="seasonStat in player.stats.data | orderBy:'-goals'">
+                                <td data-label="Account">{{ resolveSeasonName(seasonStat.season_id)}} </td>
+                                <td data-label="Account">{{ resolveLeagueName(seasonStat.league_id)}} </td>
+                                <td data-label="Account">{{:: seasonStat.appearences}} </td>
+                                <td data-label="Account">{{:: seasonStat.goals}}</td>
+                                <td data-label="Account">{{:: seasonStat.lineups}}</td>
+                                <td data-label="Account">{{:: seasonStat.minutes}}</td>
+                                <td data-label="Account">{{:: seasonStat.redcards}}</td>
+                                <td data-label="Account">{{:: seasonStat.type}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+</div>

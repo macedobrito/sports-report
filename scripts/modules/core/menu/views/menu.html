@@ -1,0 +1,8 @@
+<div ng-controller="menuController as menu" id="menu" class="ng-cloak" ng-cloak>
+    <div id="appMenu">
+        <div ng-repeat="menuItem in menu" class="menuItem" ng-click="navigate(menuItem)">
+            <md-tooltip>Play Music</md-tooltip>
+            <md-icon md-svg-icon="{{menuItem.icon}}"></md-icon>
+        </div>
+    </div>
+</div>

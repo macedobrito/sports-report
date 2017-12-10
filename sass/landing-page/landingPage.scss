@@ -1,0 +1,20 @@
+.landing-page-cont {
+  md-tabs {
+    height: 100%;
+    md-tabs-content-wrapper {
+      height: 100%;
+      md-tab-content {
+        overflow: hidden;
+        height: calc(100% - 125px);
+        .scroller-cont {
+          height: 100%;
+          .live-score-card-cont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

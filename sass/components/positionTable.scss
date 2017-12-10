@@ -1,0 +1,28 @@
+.position-table {
+  table {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  th {
+    color: $fontBold;
+  }
+  td {
+    color: $font;
+  }
+  td, th {
+    padding-left: 16px;
+    min-width: 170px;
+    text-align: center;
+  }
+  tr {
+    display: block;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: $appBackground3;
+  }
+  tbody tr:nth-child(even) {
+    *:hover {
+      margin-bottom: 14px;
+    }
+  }
+}

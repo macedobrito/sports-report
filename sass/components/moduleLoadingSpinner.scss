@@ -1,0 +1,12 @@
+.progress-loading-main{
+  height: 100%;
+  width: 100%;
+  display: table;
+  .progress-loading-cont{
+    display: table-cell;vertical-align: middle;
+    md-progress-circular {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

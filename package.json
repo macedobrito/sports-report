@@ -1,0 +1,100 @@
+{
+  "name": "Sport-Resume",
+  "version": "1.0.0",
+  "description": "A soccer resume app",
+  "main": "main.js",
+  "author": "Francisco Brito <franciscomacedobrito@gmail.com>",
+  "scripts": {
+    "start": "electron .",
+    "build-css": "node-sass --include-path scss sass/base.scss   stlyes/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" \"npm start\"",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "com.sport-resume.exercise",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macedobrito/sports-report.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macedobrito/sports-report/issues"
+  },
+  "homepage": "https://github.com/macedobrito/sports-report#readme"
+  "dependencies": {
+    "smooth-scrollbar": "^8.2.5",
+    "gsap": "^1.20.3"
+  },
+  "devDependencies": {
+    "electron": "^1.6.10",
+    "autoprefixer-core": "4.0.2",
+    "browser-sync": "^2.18.13",
+    "del": "1.1.1",
+    "electron-builder": "^19.48.3",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-cache": "0.2.2",
+    "gulp-clean-css": "3.4.1",
+    "gulp-concat": "2.6.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-csso": "0.2.6",
+    "gulp-debug": "^3.1.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "1.2.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-jsvalidate": "^3.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-ng-annotate": "1.1.0",
+    "gulp-postcss": "^3.0.0",
+    "gulp-rev-all": "0.8.24",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-scss-lint": "^0.5.0",
+    "gulp-size": "1.1.0",
+    "gulp-sourcemaps": "1.3.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "1.0.2",
+    "jasmine-core": "2.4.1",
+    "jasmine-expect": "2.0.0-beta2",
+    "jshint-stylish": "1.0.0",
+    "karma": "^1.7.1",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.2.2",
+    "karma-coverage": "0.5.3",
+    "karma-firefox-launcher": "0.1.7",
+    "karma-htmlfile-reporter": "0.2.2",
+    "karma-jasmine": "0.3.6",
+    "karma-phantomjs-launcher": "0.2.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.12.5",
+    "opn": "1.0.0",
+    "phantomjs": "1.9.19",
+    "require-dir": "^0.3.2"
+  }
+}
+
