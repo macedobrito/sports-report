@@ -26,13 +26,24 @@ npm install
 
 ### Run web-version
 
+
+```
 npm run build-css
+
+```
+
+```
 gulp
+
+```
 
 ### Run desktop app version
 
+
+```
 npm start
 
+```
 ### Extra features:
 
 All extras suggested on exercise proposal were implemented, bellow are listed some extras beyond those bonus:
