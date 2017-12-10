@@ -45,7 +45,7 @@
   "bugs": {
     "url": "https://github.com/macedobrito/sports-report/issues"
   },
-  "homepage": "https://github.com/macedobrito/sports-report#readme"
+  "homepage": "https://github.com/macedobrito/sports-report#readme",
   "dependencies": {
     "smooth-scrollbar": "^8.2.5",
     "gsap": "^1.20.3"
