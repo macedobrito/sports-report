@@ -19,12 +19,14 @@ sudo gem install sass
 
 ### Install Dependencies
 
-```
 
 npm install
 
+```
+
 ### Run web-version
 
+npm run build-css
 gulp
 
 ### Run desktop app version
